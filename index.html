@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="et">
 
 <head>
 
@@ -20,7 +20,7 @@
             color: white;
             padding: 2em;
             font-size: 16px;
-            margin: 0  auto;
+            margin: 0 auto;
             text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
             word-wrap: break-word;
             height: 100%;
@@ -85,60 +85,164 @@
             border-bottom: 2px solid white;
         }
 
+        /** SRC: https://www.w3schools.com/howto/howto_css_image_grid_responsive.asp **/
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0 4px;
+        }
+
+        /* Create 4 equal columns that sits next to each other */
+        .column {
+            box-sizing: border-box;
+            flex: 25%;
+            max-width: 25%;
+            padding: 0 4px;
+        }
+
+        .column img {
+            margin-top: 8px;
+            vertical-align: middle;
+            width: 100%;
+        }
+
+        /* Responsive layout - makes a two column-layout instead of four columns */
+        @media screen and (max-width: 800px) {
+            .column {
+                flex: 50%;
+                max-width: 50%;
+            }
+        }
+
+        /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+            .column {
+                flex: 100%;
+                max-width: 100%;
+            }
+        }
     </style>
 </head>
 
 <body>
 
-    <header>
-        <h1>TIBLU</h1>
+<header>
+    <h1>TIBLU</h1>
+    <p>
+        Klassikaliste sõidukite taastamine, ümberehitus ja rent. Metallitööd.
+    </p>
+    <hr/>
+    <nav>
+        <a href="#teenused">Teenused</a> &bull; <a href="#pulmaauto_rent"> Pulmaauto rent</a> &bull; <a href="#projektid">Projektid</a> &bull; <a href="#kontakt">Kontakt</a>
+    </nav>
+    <hr/>
+</header>
+<section>
+    <h2 id="teenused">Teenused</h2>
+    <section>
+        <ul>
+            <li>Klassikaliste sõidukite taastamine</li>
+            <li>Klassikaliste sõidukite ümberehitus</li>
+            <li>Klassikaliste sõidukite ostu eelne ülevaatus</li>
+            <li>Klassikalise sõiduki rent - <a href="#pulmaauto_rent">Volvo Amazon P121 1965 - 4 ust, automaat</a> - võtmed kätte või koos juhiga</li>
+            <li>Metallitööd - TIG, MIG keevitamine. Alumiiniumradiaatorid.</li>
+            <li>3D modelleerimine</li>
+            <li>3D printimine</li>
+        </ul>
+    </section>
+</section>
+
+<section>
+    <h2 id="pulmaauto_rent">Pulmaauto rent</h2>
+    <section>
         <p>
-            Klassikaliste sõidukite taastamine, ümberehitus ja rent. Metallitööd.
+            Pulmasõitudeks sobib hästi klassikaline Volvo Amazon, mille roolis võid olla sina ise või sinule oluline inimene. 55 aastat vana auto on väga heas korras, automaatkasti, 4 ukse ja
+            katuseluugiga.
+            Keera võtit ja naudi sõitu!
         </p>
-        <hr/>
-        <nav>
-            <a href="#teenused">Teenused</a> &bull; <a href="#projektid">Projektid</a> &bull; <a href="#kontakt">Kontakt</a>
-        </nav>
-        <hr/>
-    </header>
-    <section>
-        <h2 id="teenused">Teenused</h2>
-        <section>
-            <ul>
-                <li>Klassikaliste sõidukite taastamine</li>
-                <li>Klassikaliste sõidukite ümberehitus</li>
-                <li>Klassikaliste sõidukite ostu eelne ülevaatus</li>
-                <li>Klassikalise sõiduki rent - <a href="https://www.instagram.com/vanaisaautod">Volvo Amazon P121 1965 - 4 ust, automaat</a> - võtmed kätte või koos juhiga</li>
-                <li>Metallitööd - TIG, MIG keevitamine. Alumiiniumradiaatorid.</li>
-                <li>3D modelleerimine</li>
-                <li>3D printimine</li>
-            </ul>
-        </section>
-    </section>
-
-    <section>
-        <h2 id="projektid">Projektid</h2>
-        <section>
-            <ul>
-                <li>Volvo Amazon P121 1965 - 4 ust, automaat - <a href="http://foorum.volvoclub.ee/viewtopic.php?f=25&t=53578">http://foorum.volvoclub.ee/viewtopic.php?f=25&t=53578</a></li>
-                <li>Volkswagen T2 Bay 1978 ümberehitus - Subaru mootor ja käigukast - <a href="http://www.beetle.ee/foorum/viewtopic.php?f=10&t=1248&start=15#p19234">http://www.beetle.ee/foorum/viewtopic.php?f=10&t=1248&start=15#p19234</a>
-                </li>
-            </ul>
-        </section>
-    </section>
-
-    <section>
-        <h2 id="kontakt">Kontakt</h2>
-        <div>
-            <div><b>Tiblu OÜ</b></div>
-            <div>Registrikood: <b>12745969</b></div>
-            <div>Telefon: <b>+37259190991</b></div>
-            <div>E-mail: <b><a href="mailto: info@tiblu.com">info@tiblu.com</a></b></div>
-            <div>Asukoht: <b>Ujula tn 4A, Kose alevik, Kose vald, Harju maakond 75101, EESTI</b></div>
-            <div><b><a href="https://www.instagram.com/vanaisaautod"><i class="fab fa-instagram"></i> vanaisaautod</a></b></div>
-            <div><b><a href="https://linkedin.com/company/tiblu-oü"><i class="fab fa-linkedin"></i> tiblu-oü</a></b></div>
+        <h3>Üldinfo</h3>
+        <p>
+        <ul>
+            <li>Sõiduk: <b><a href="#pulmaauto_rent_pildid">Volvo Amazon P121, 1965, 4 ust, automaatkast ja katuseluuk</a></b></li>
+            <li>Juht: <b>Võtmed kätte! Roolis sina ise või sinu valitud juht.</b></li>
+            <li>Hind: <b>400 € / ööpäev</b></li>
+            <li>Kontakt: <b>+37259190991</b>, <b><a href="mailto: info@tiblu.com">info@tiblu.com</a></b></li>
+        </ul>
+        </p>
+        <h3 id="pulmaauto_rent_pildid">Pildid</h3>
+        <p>Autorid: <a href="https://www.instagram.com/tarvotammeoks/">@tarvotammeoks</a>, Rasmus R, <a href="https://www.instagram.com/jakefarra/">@jakefarra</a></p>
+        <p>
+        <div class="row">
+            <div class="column">
+                <img src="images/volvo_amazon_p121_1965/1.jpg">
+                <img src="images/volvo_amazon_p121_1965/7.jpg">
+                <img src="images/volvo_amazon_p121_1965/6.jpg">
+                <img src="images/volvo_amazon_p121_1965/9.jpg">
+            </div>
+            <div class="column">
+                <img src="images/volvo_amazon_p121_1965/2.jpg">
+                <img src="images/volvo_amazon_p121_1965/4.jpg">
+                <img src="images/volvo_amazon_p121_1965/11.jpg">
+                <img src="images/volvo_amazon_p121_1965/10.jpg">
+            </div>
+            <div class="column">
+                <img src="images/volvo_amazon_p121_1965/3.jpg">
+                <img src="images/volvo_amazon_p121_1965/8.jpg">
+            </div>
+            <div class="column">
+                <img src="images/volvo_amazon_p121_1965/jf1.jpg">
+                <img src="images/volvo_amazon_p121_1965/jf2.jpg">
+                <img src="images/volvo_amazon_p121_1965/jf3.jpg">
+            </div>
         </div>
+        </p>
+        <h3>Lisainfo ja tingimused</h3>
+        <p>
+        <ul>
+            <li>Autol on passis 5 kohta, turvavööd on 4 inimese jaoks.</li>
+            <li>Autol on tavaline liikluskindlustus, sest kaskot Eestis nii vanale autole ei tehta. See tähendab, et kui auto peaks sattuma avariisse, siis juhul kui juht on süüdi, kannab juht
+                remondikahju.
+            </li>
+            <li>Auto saab kätte vastavalt soovile Tallinnas või Harjumaal, Kosel.</li>
+            <li>Autot saab enne üritust eelneval kokkuleppel näha ja testisõitu teha. Soovitan kasutada seda võimalust, et ilusal päeval kõik oleks nii nagu ette nähtud.</li>
+            <li>Auto on väga heas korras, aga alati on risk, et autoga juhtub midagi enne üritust. Kahjuks mul hetkel pole võimalik asendusautot pakkuda.</li>
+            <li>Auto annan täis paagiga ja ootan tagasi täis paagiga. Autosse palun tankida ainult E98 kütust.</li>
+        </ul>
+        </p>
+        <h3>Auto ajalugu</h3>
+        <p>
+            Auto tõin 2019 aasta veebruaris Hollandist. Auto nägi juba ostes soliidne välja, kuid siiski leidus läbivat roostet esimeses vasakus lanseronis, tagumises tiivakoopas ja üldisemalt sõiduki
+            taguosas. Lisaks oli armatuur nadis seisus.
+            Selle auto taastamine praegusesse seisu võttis pea-aegu 5 kuud, millest nautisin igat minutit. Vahetatud sai kogu armatuur, esimene lanseron, kõik tuled ning käidud üle kogu sabaosa.
+            Esimene
+            auto, mille juures tegin kogu värvi ettevalmistuse ise.
+            Põhjalikumalt saab auto tegemisest ja ajaloost lugeda Eesti Volvo Klubi foorumist - <a href="http://foorum.volvoclub.ee/viewtopic.php?f=25&t=53578">http://foorum.volvoclub.ee/viewtopic.php?f=25&t=53578</a>.
+        </p>
     </section>
+</section>
+<section>
+    <h2 id="projektid">Projektid</h2>
+    <section>
+        <ul>
+            <li>Volvo Amazon P121 1965 - 4 ust, automaat - <a href="http://foorum.volvoclub.ee/viewtopic.php?f=25&t=53578">http://foorum.volvoclub.ee/viewtopic.php?f=25&t=53578</a></li>
+            <li>Volkswagen T2 Bay 1978 ümberehitus - Subaru mootor ja käigukast - <a href="http://www.beetle.ee/foorum/viewtopic.php?f=10&t=1248&start=15#p19234">http://www.beetle.ee/foorum/viewtopic.php?f=10&t=1248&start=15#p19234</a>
+            </li>
+        </ul>
+    </section>
+</section>
+
+<section>
+    <h2 id="kontakt">Kontakt</h2>
+    <div>
+        <div><b>Tiblu OÜ</b></div>
+        <div>Registrikood: <b>12745969</b></div>
+        <div>Telefon: <b>+37259190991</b></div>
+        <div>E-mail: <b><a href="mailto: info@tiblu.com">info@tiblu.com</a></b></div>
+        <div>Asukoht: <b>Ujula tn 4A, Kose alevik, Kose vald, Harju maakond 75101, EESTI</b></div>
+        <div><b><a href="https://www.instagram.com/vanaisaautod"><i class="fab fa-instagram"></i> vanaisaautod</a></b></div>
+        <div><b><a href="https://linkedin.com/company/tiblu-oü"><i class="fab fa-linkedin"></i> tiblu-oü</a></b></div>
+    </div>
+</section>
 
 </body>
 
