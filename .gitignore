@@ -1,0 +1,4 @@
+/reference images/
+*.swp
+Thumbs.db
+/.idea/*
