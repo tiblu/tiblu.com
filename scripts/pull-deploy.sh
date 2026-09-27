@@ -8,17 +8,17 @@ REPO_URL="https://github.com/tiblu/tiblu.com.git"
 SRC="$HOME/tiblu.com-src"
 WEBROOT="$HOME/domeenid/www.tiblu.com/htdocs"
 
+STAMP="$HOME/.tiblu-deployed"   # commit last synced to the web root
+
 if [ ! -d "$SRC/.git" ]; then
   git clone --quiet --branch master "$REPO_URL" "$SRC"
-  FORCE=1
 fi
 
 cd "$SRC"
 git fetch --quiet origin master
-LOCAL=$(git rev-parse HEAD)
 REMOTE=$(git rev-parse origin/master)
 
-if [ "$LOCAL" = "$REMOTE" ] && [ -z "${FORCE:-}" ]; then
+if [ -f "$STAMP" ] && [ "$(cat "$STAMP")" = "$REMOTE" ]; then
   exit 0
 fi
 
@@ -32,4 +32,5 @@ rsync -rlt --delete \
   --exclude=".well-known" \
   "$SRC/" "$WEBROOT/"
 
+echo "$REMOTE" > "$STAMP"
 echo "$(date '+%Y-%m-%d %H:%M:%S') deployed $(git rev-parse --short HEAD): $(git log -1 --format=%s)"
