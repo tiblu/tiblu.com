@@ -5,7 +5,9 @@
   --fg-soft: #d6d6d0;
   --muted: #9a9a94;
   --line: #2a2a28;
+  --line-strong: #3a3a37;
   --accent: #96db02;
+  --warn: #e8a33d;
   --wrap: 1120px;
   --gutter: 20px;
 }
@@ -82,6 +84,15 @@ img { display: block; max-width: 100%; }
 .card h4 { font-size: 22px; line-height: 1.3; font-weight: 600; }
 .card-ids { display: flex; flex-direction: column; gap: 2px; font-size: 13px; color: var(--muted); letter-spacing: 0.02em; font-variant-numeric: tabular-nums; }
 .card-desc { font-size: 16px; line-height: 1.65; color: var(--fg-soft); white-space: pre-line; }
+.card-links { display: flex; flex-wrap: wrap; gap: 0 28px; }
+
+.badge {
+  align-self: flex-start;
+  padding: 6px 12px; border-radius: 4px;
+  background: var(--accent); color: var(--bg);
+  font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1.5;
+}
+.car .badge { position: absolute; top: 12px; left: 12px; z-index: 1; font-size: 12px; padding: 5px 10px; }
 
 /* Carousel */
 .car {
@@ -124,6 +135,68 @@ img { display: block; max-width: 100%; }
 .contact-details { display: grid; grid-template-columns: 140px 1fr; row-gap: 16px; font-size: 17px; line-height: 1.55; }
 .contact-details dt { color: var(--muted); }
 
+/* Sale page */
+.back-link { display: inline-flex; align-items: center; gap: 8px; align-self: flex-start; min-height: 44px; font-size: 15px; color: var(--muted); }
+
+.sale-hero { padding-top: 48px; display: flex; flex-direction: column; gap: 28px; }
+.sale-hero-grid { display: flex; flex-wrap: wrap; gap: 40px; }
+.sale-hero-media { flex: 1 1 420px; min-width: 0; border-radius: 6px; overflow: hidden; background: var(--bg-raised); }
+.sale-hero-media img { width: 100%; height: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+.sale-hero-info { flex: 1.15 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 24px; }
+.sale-hero-info h1 { font-size: 46px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.12; }
+.sale-lead { font-size: 18px; line-height: 1.6; color: var(--fg-soft); }
+
+.price { padding: 20px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 4px; }
+.price-label { font-size: 14px; color: var(--muted); letter-spacing: 0.04em; }
+.price-value { font-size: 48px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.price-note { font-size: 15px; color: var(--fg-soft); }
+
+.cta { display: flex; flex-direction: column; gap: 12px; }
+.button {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  min-height: 56px; padding: 0 20px; border-radius: 6px; border: 1px solid var(--line-strong);
+  font-size: 18px; font-weight: 500;
+}
+.button-primary { background: var(--accent); border-color: var(--accent); color: var(--bg); font-weight: 600; }
+.button-primary:hover { background: var(--fg); border-color: var(--fg); color: var(--bg); }
+
+.section-split { flex-direction: row; flex-wrap: wrap; gap: 32px 40px; }
+.section-split > h2 { flex: 1 1 300px; }
+.section-split > :not(h2) { flex: 2.4 1 560px; min-width: 0; }
+
+.specs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 40px; font-size: 17px; }
+.specs > div { padding: 16px 0; border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 2px; }
+.specs dt { font-size: 14px; color: var(--muted); }
+
+.checklists { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px 40px; }
+.checklist { display: flex; flex-direction: column; gap: 12px; }
+.checklist h3 { display: flex; align-items: center; gap: 10px; font-size: 22px; font-weight: 600; color: var(--accent); }
+.checklist-warn h3 { color: var(--warn); }
+.checklist ul { padding: 0; list-style: none; font-size: 17px; line-height: 1.45; }
+.checklist li { padding: 12px 0; border-bottom: 1px solid var(--line); display: flex; gap: 12px; align-items: baseline; }
+.checklist li::before { content: "✓"; flex: none; color: var(--accent); }
+.checklist-warn li::before { content: "!"; color: var(--warn); }
+
+.videos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 24px; }
+.videos figure, .gallery figure { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+.videos video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 6px; background: var(--bg-raised); }
+.videos figcaption { font-size: 20px; font-weight: 600; }
+
+.gallery { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px; }
+.gallery figure { gap: 10px; }
+.gallery img { width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 6px; background: var(--bg-raised); }
+.gallery figcaption { font-size: 14px; color: var(--muted); }
+.album-tile {
+  aspect-ratio: 1 / 1; padding: 20px; border-radius: 6px; border: 1px solid var(--line-strong); background: var(--bg-raised);
+  display: flex; flex-direction: column; justify-content: space-between; gap: 12px;
+}
+.album-tile-count { font-size: 48px; font-weight: 600; line-height: 1; letter-spacing: -0.02em; color: var(--accent); }
+.album-tile-text { font-size: 18px; font-weight: 600; line-height: 1.3; }
+.album-tile .arrow-link { min-height: 0; }
+
+.parts { display: flex; flex-direction: column; gap: 16px; }
+.parts p { font-size: 18px; line-height: 1.6; color: var(--fg-soft); }
+
 /* Footer */
 .site-footer { margin-top: 96px; border-top: 1px solid var(--line); }
 .footer-inner { min-height: 96px; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-size: 15px; color: var(--muted); }
@@ -135,6 +208,9 @@ img { display: block; max-width: 100%; }
 @media (max-width: 1000px) {
   .services { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px 32px; }
+
+  .specs, .checklists, .videos { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 /* Phone */
@@ -157,6 +233,11 @@ img { display: block; max-width: 100%; }
   .card { gap: 12px; }
   .card h4 { font-size: 21px; }
   .card-desc { line-height: 1.6; }
+
+  .sale-hero { padding-top: 24px; }
+  .sale-hero-info h1 { font-size: 32px; }
+  .price-value { font-size: 40px; }
+  .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 
   .contact { grid-template-columns: 1fr; gap: 32px; }
   .contact-email { font-size: 30px; }
