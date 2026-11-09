@@ -4,6 +4,10 @@
   var CHEVRON_LEFT = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 6l-6 6 6 6"></path></svg>';
   var CHEVRON_RIGHT = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"></path></svg>';
   var SWIPE_MIN = 40;
+  var EN = document.documentElement.lang === 'en';
+  var T = EN
+    ? { photo: 'Photo ', prev: 'Previous photo', next: 'Next photo' }
+    : { photo: 'Pilt ', prev: 'Eelmine pilt', next: 'Järgmine pilt' };
 
   function button(className, label, html) {
     var b = document.createElement('button');
@@ -46,15 +50,15 @@
 
     for (var i = 0; i < n; i++) {
       (function (k) {
-        var d = button('car-dot', 'Pilt ' + (k + 1) + '/' + n);
+        var d = button('car-dot', T.photo + (k + 1) + '/' + n);
         d.addEventListener('click', function () { show(k); });
         dots.push(d);
         dotsWrap.appendChild(d);
       })(i);
     }
 
-    var prev = button('car-nav car-prev', 'Eelmine pilt', CHEVRON_LEFT);
-    var next = button('car-nav car-next', 'Järgmine pilt', CHEVRON_RIGHT);
+    var prev = button('car-nav car-prev', T.prev, CHEVRON_LEFT);
+    var next = button('car-nav car-next', T.next, CHEVRON_RIGHT);
     prev.addEventListener('click', function () { show(index - 1); });
     next.addEventListener('click', function () { show(index + 1); });
 
