@@ -167,6 +167,23 @@ img { display: block; max-width: 100%; }
 .button-primary { background: var(--accent); border-color: var(--accent); color: var(--bg); font-weight: 600; }
 .button-primary:hover { background: var(--fg); border-color: var(--fg); color: var(--bg); }
 
+/* Phone number / email + copy button (sale pages, copy.js) */
+.copy-row { display: flex; align-items: center; gap: 12px; }
+.copy-row > a { min-width: 0; }
+.copy-row > .button { flex: 1; }
+/* Let visitors drag-select the number/email inside the link (copy.js stops the click after a selection). */
+a[draggable="false"] { -webkit-user-drag: none; user-select: text; -webkit-user-select: text; }
+.copy-button {
+  flex: none; display: flex; align-items: center; justify-content: center;
+  width: 56px; height: 56px; padding: 0; border-radius: 6px; border: 1px solid var(--line-strong);
+  background: none; color: var(--fg); cursor: pointer;
+}
+.copy-button[hidden] { display: none; }
+.copy-button:hover { color: var(--accent); }
+.copy-button.is-copied { color: var(--accent); border-color: var(--accent); }
+.copy-button-small { width: 44px; height: 44px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
 .section-split { flex-direction: row; flex-wrap: wrap; gap: 32px 40px; }
 .section-split > h2 { flex: 1 1 300px; }
 .section-split > :not(h2) { flex: 2.4 1 560px; min-width: 0; }
